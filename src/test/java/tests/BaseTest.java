@@ -4,8 +4,9 @@ import com.codeborne.selenide.Configuration;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
+import pages.EditProfilePage;
 import pages.LoginPage;
-import tests.TestListener;
+import pages.TestListener;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
@@ -13,6 +14,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public class BaseTest {
 
     LoginPage loginPage;
+    EditProfilePage editProfilePage;
 
     @BeforeMethod
     public void setupBrowser() {
@@ -22,6 +24,7 @@ public class BaseTest {
         Configuration.browser = "chrome";
         Configuration.clickViaJs = false;
         loginPage = new LoginPage();
+        editProfilePage = new EditProfilePage();
     }
 
     @AfterMethod(alwaysRun = true)
