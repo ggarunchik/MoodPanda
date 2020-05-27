@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class EditProfileTest extends BaseTest {
 
-    @Test
+    @Test(description = "Verifying user can eddit personal info")
     public void verifyUserCanEditAndSavePersonalInfo() {
         loginPage
                 .openPage()
@@ -14,7 +14,7 @@ public class EditProfileTest extends BaseTest {
                 .editPersonalDetails("Gleb","C", "1992", "Cis" );
     }
 
-    @Test
+    @Test(description = "Verifying usr can edit and save log info")
     public void verifyUserCanEditAndSaveLoginInfo() {
         loginPage
                 .openPage()
@@ -24,7 +24,7 @@ public class EditProfileTest extends BaseTest {
                 .editLoginDetails("testtetst@mail.com", "test123", "test123");
     }
 
-    @Test
+    @Test(description = "Verifying error message for missing password")
     public void verifyErrorMessageForMissingPassword() {
         loginPage
                 .openPage()

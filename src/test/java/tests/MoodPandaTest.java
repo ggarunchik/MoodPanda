@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class MoodPandaTest extends BaseTest {
 
-    @Test
+    @Test(description = "Verify user cal login and update mood")
     public void login() {
         loginPage
                 .openPage()
