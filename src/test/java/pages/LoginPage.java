@@ -19,7 +19,7 @@ public class LoginPage extends BasePage {
     @Step("Verifying is Login page open")
     public LoginPage isPageOpened() {
         $("[alt='MoodPanda Android App on Google Play'").waitUntil(Condition.visible, 30000);
-        AllureUtils.takeScreenshot(driver);
+        AllureUtils.takeScreenshot();
         return this;
     }
 
@@ -28,7 +28,7 @@ public class LoginPage extends BasePage {
         sleep(2000);
         $(By.id("ContentPlaceHolderContent_TextBoxEmail")).sendKeys(email);
         $(By.id("ContentPlaceHolderContent_TextBoxPassword")).sendKeys(password);
-        AllureUtils.takeScreenshot(driver);
+        AllureUtils.takeScreenshot();
         $(By.id("ContentPlaceHolderContent_ButtonLogin")).click();
         FeedPage feedPage = new FeedPage();
         feedPage.isPageOpened();

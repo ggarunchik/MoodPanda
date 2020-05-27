@@ -23,7 +23,7 @@ public class FeedPage extends BasePage {
     @Step("Verifying is Feed Page open")
     public FeedPage isPageOpened() {
         $(byText("Control my privacy")).waitUntil(Condition.visible, 30000);
-        AllureUtils.takeScreenshot(driver);
+        AllureUtils.takeScreenshot();
         return this;
     }
 
@@ -32,7 +32,7 @@ public class FeedPage extends BasePage {
         $(updateButton).click();
         RateHappinessModal rateHappinessModal = new RateHappinessModal();
         rateHappinessModal.isModalOpened();
-        AllureUtils.takeScreenshot(driver);
+        AllureUtils.takeScreenshot();
         return rateHappinessModal;
     }
 }

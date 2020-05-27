@@ -27,7 +27,7 @@ public class EditProfilePage extends BasePage {
     @Step("Verifying is Edit Page opened")
     public EditProfilePage isPageOpened() {
         $(By.id(UPDATE_BUTTON_XPATH)).waitUntil(Condition.visible, 30000);
-        AllureUtils.takeScreenshot(driver);
+        AllureUtils.takeScreenshot();
         return this;
     }
 
@@ -38,7 +38,7 @@ public class EditProfilePage extends BasePage {
         new Dropdown("Year of Birth").clickOnDropdownAndSelectElement(yearOfBirth);
         new Dropdown("Gender").clickOnDropdownAndSelectElement(gender);
         new TextInput("New Password [optional]").clear();
-        AllureUtils.takeScreenshot(driver);
+        AllureUtils.takeScreenshot();
         $(By.id(UPDATE_BUTTON_XPATH)).click();
         verifySuccessAlert();
         return this;
@@ -49,7 +49,7 @@ public class EditProfilePage extends BasePage {
         new TextInput("Email Address").write(email);
         new TextInput("New Password [optional]").write(password);
         new TextInput("Confirm New Password").write(confirmPassword);
-        AllureUtils.takeScreenshot(driver);
+        AllureUtils.takeScreenshot();
         $(By.id(UPDATE_BUTTON_XPATH)).click();
         verifySuccessAlert();
         return this;
@@ -58,7 +58,7 @@ public class EditProfilePage extends BasePage {
     @Step("Saving personal data without optional password")
     public EditProfilePage saveInfoWithOptionalPasswordError(String password, String errorMessage) {
         new TextInput("New Password [optional]").write(password);
-        AllureUtils.takeScreenshot(driver);
+        AllureUtils.takeScreenshot();
         $(By.id(UPDATE_BUTTON_XPATH)).click();
         verifyErrorAlert(errorMessage);
         return this;
@@ -68,7 +68,7 @@ public class EditProfilePage extends BasePage {
     public EditProfilePage verifySuccessAlert() {
         $(By.id(SUCCESS_ALERT_ID)).waitUntil(Condition.visible, 20000);
         $(By.id(SUCCESS_ALERT_ID)).shouldHave(text("Your changes were saved"));
-        AllureUtils.takeScreenshot(driver);
+        AllureUtils.takeScreenshot();
         return this;
     }
 
@@ -76,7 +76,7 @@ public class EditProfilePage extends BasePage {
     public EditProfilePage verifyErrorAlert(String alertMessage) {
         $(By.cssSelector(ERROR_ALERT_CSS)).waitUntil(Condition.visible, 20000);
         $(By.cssSelector(ERROR_ALERT_CSS)).shouldHave(text(alertMessage));
-        AllureUtils.takeScreenshot(driver);
+        AllureUtils.takeScreenshot();
         return this;
     }
 

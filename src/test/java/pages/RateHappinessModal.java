@@ -16,7 +16,7 @@ public class RateHappinessModal extends BaseRateModal {
     @Step("Verifying is Rate Modal opened")
     public RateHappinessModal isModalOpened() {
         $(UPDATE_BUTTON_CSS).waitUntil(Condition.visible, 30000);
-        AllureUtils.takeScreenshot(driver);
+        AllureUtils.takeScreenshot();
         return this;
     }
 
@@ -35,7 +35,7 @@ public class RateHappinessModal extends BaseRateModal {
         for (int i = 0; i < Math.abs(difference) ; i++) {
             $(SLIDER_CSS).sendKeys(arrowValue);
         }
-        AllureUtils.takeScreenshot(driver);
+        AllureUtils.takeScreenshot();
         $(UPDATE_BUTTON_CSS).click();
         return this;
     }
@@ -45,7 +45,7 @@ public class RateHappinessModal extends BaseRateModal {
         $(MY_DIARY_BUTTON_CSS).click();
         MyDiaryPage myDiaryPage = new MyDiaryPage();
         myDiaryPage.isPageOpened();
-        AllureUtils.takeScreenshot(driver);
+        AllureUtils.takeScreenshot();
         return myDiaryPage;
     }
 
